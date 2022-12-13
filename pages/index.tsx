@@ -1,11 +1,15 @@
-import { Welcome } from '../components/Welcome/Welcome';
 import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
+import { createStyles } from '@mantine/core';
+
+const useStyles = createStyles((theme) => ({
+  myCustomButton: {
+    ...theme.fn.focusStyles(),
+  },
+}));
 
 export default function HomePage() {
   return (
-    <>
-      <Welcome />
-      <ColorSchemeToggle />
-    </>
+    <div>
+    </div>
   );
 }

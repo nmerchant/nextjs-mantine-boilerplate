@@ -33,9 +33,10 @@
     "cookies-next": "^2.1.1",
     "dayjs": "^1.11.6",
     "embla-carousel-react": "^7.0.3",
-    "next": "12.3.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "eslint-config-next": "^13.0.6",
+    "next": "^13.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
@@ -50,6 +51,7 @@
     "@types/react": "18.0.21",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
+    "autoprefixer": "^10.4.13",
     "babel-loader": "^8.2.4",
     "eslint": "^8.18.0",
     "eslint-config-airbnb": "19.0.4",
@@ -63,9 +65,11 @@
     "eslint-plugin-storybook": "^0.5.7",
     "eslint-plugin-testing-library": "^5.2.0",
     "jest": "^27.5.1",
+    "postcss": "^8.4.20",
     "prettier": "^2.7.1",
     "storybook-addon-turbo-build": "^1.1.0",
     "storybook-dark-mode": "^1.1.2",
+    "tailwindcss": "^3.2.4",
     "ts-jest": "^27.1.4",
     "typescript": "4.8.4"
   }

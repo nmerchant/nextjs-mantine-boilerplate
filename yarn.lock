@@ -1539,7 +1539,7 @@
     "@mantine/ssr" "5.9.0"
     "@mantine/styles" "5.9.0"
 
-"@mantine/notifications@5.9.0":
+"@mantine/notifications@^5.9.0":
   "integrity" "sha512-v95+rRmmdi3SCCR67C9m6+OSxQLkbmpu5sgRx8QvLzc4WBK+xA1X27gRTd1a+eA2MdZFvv7jDAOxKIOqTgmI8g=="
   "resolved" "https://registry.npmjs.org/@mantine/notifications/-/notifications-5.9.0.tgz"
   "version" "5.9.0"

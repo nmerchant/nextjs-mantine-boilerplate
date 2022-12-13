@@ -28,7 +28,7 @@ interface UserButtonProps extends UnstyledButtonProps {
   icon?: React.ReactNode;
 }
 
-export default function UserButton({ image, name, email, icon, ...others }: UserButtonProps) {
+export function UserButton({ image, name, email, icon, ...others }: UserButtonProps) {
   const { classes } = useStyles();
 
   return (

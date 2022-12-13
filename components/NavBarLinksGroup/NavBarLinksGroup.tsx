@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Group, Box, Collapse, ThemeIcon, Text, UnstyledButton, createStyles } from '@mantine/core';
 import { TablerIcon, IconCalendarStats, IconChevronLeft, IconChevronRight } from '@tabler/icons';
+import Link from 'next/link';
 
 const useStyles = createStyles((theme) => ({
   control: {
@@ -46,26 +47,45 @@ interface LinksGroupProps {
   label: string;
   initiallyOpened?: boolean;
   links?: { label: string; link: string }[];
+  link?: string
 }
 
-export function LinksGroup({ icon: Icon, label, initiallyOpened, links }: LinksGroupProps) {
+export function LinksGroup({ icon: Icon, label, initiallyOpened, links, link }: LinksGroupProps) {
   const { classes, theme } = useStyles();
   const hasLinks = Array.isArray(links);
   const [opened, setOpened] = useState(initiallyOpened || false);
   const ChevronIcon = theme.dir === 'ltr' ? IconChevronRight : IconChevronLeft;
   const items = (hasLinks ? links : []).map((link) => (
-    <Text<'a'>
-      component="a"
-      className={classes.link}
-      href={link.link}
-      key={link.label}
-      onClick={(event) => event.preventDefault()}
-    >
-      {link.label}
-    </Text>
+    <div className={classes.link}>
+      <Link href={link.link} key={link.label}>{link.label}</Link>
+    </div>
   ));
 
   return (
+    link ? 
+    <>
+      <UnstyledButton onClick={() => setOpened((o) => !o)} className={classes.control}>
+        <Group position="apart" spacing={0}>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <ThemeIcon variant="light" size={30}>
+              <Icon size={18} />
+            </ThemeIcon>
+            <Box ml="md"><Link href={link} key={label}>{label}</Link></Box>
+          </Box>
+          {hasLinks && (
+            <ChevronIcon
+              className={classes.chevron}
+              size={14}
+              stroke={1.5}
+              style={{
+                transform: opened ? `rotate(${theme.dir === 'rtl' ? -90 : 90}deg)` : 'none',
+              }}
+            />
+          )}
+        </Group>
+      </UnstyledButton>
+      
+    </> : 
     <>
       <UnstyledButton onClick={() => setOpened((o) => !o)} className={classes.control}>
         <Group position="apart" spacing={0}>
